@@ -60,10 +60,78 @@ export const createUsersWithMessages = async () => {
         createdAt: new Date(),
     });
 
+    const habit1 = new models.Habit({
+        user: user1.id,
+        title: 'Workout',
+        description:
+            'As often as possible, try to fit in mornings or late nights depending on the daily routine.',
+        startDate: new Date(),
+        endDate: new Date(),
+        occasions: [
+            new Date('2019-06-05T10:30:05.000Z'),
+            new Date('2019-06-06T10:30:05.000Z'),
+            new Date('2019-06-07T10:30:05.000Z'),
+        ],
+        rank: 1,
+        createdAt: new Date(),
+    });
+
+    const habit2 = new models.Habit({
+        user: user1.id,
+        title: 'Clean apartment',
+        description: 'Self explanatory and absolutely essential!',
+        startDate: new Date(),
+        endDate: new Date(),
+        occasions: [
+            new Date('2019-06-10T10:30:05.000Z'),
+            new Date('2019-06-12T10:30:05.000Z'),
+            new Date('2019-06-12T14:30:05.000Z'),
+        ],
+        rank: 2,
+        createdAt: new Date(),
+    });
+
+    const habit3 = new models.Habit({
+        user: user1.id,
+        title: 'Work on my-web-tools',
+        description:
+            'This needs to be done at a regular basis in order to not forget the greater goal. Make sure to create clear guidelines for the next sesson before ending the current one.',
+        startDate: new Date(),
+        endDate: new Date(),
+        occasions: [
+            new Date('2019-06-01T10:30:05.000Z'),
+            new Date('2019-06-02T10:30:05.000Z'),
+            new Date('2019-06-03T10:30:05.000Z'),
+        ],
+        rank: 3,
+        createdAt: new Date(),
+    });
+
+    const habit4 = new models.Habit({
+        user: user1.id,
+        title: 'Water plants',
+        description:
+            'Make sure plants are watered at a regular interval, this is key for them to grow because of the dry climate in the apartment.',
+        startDate: new Date(),
+        endDate: new Date(),
+        occasions: [
+            new Date('2019-06-06T11:30:05.000Z'),
+            new Date('2019-06-10T10:40:05.000Z'),
+            new Date('2019-06-13T14:20:05.000Z'),
+        ],
+        rank: 4,
+        createdAt: new Date(),
+    });
+
     await message1.save();
     await message2.save();
     await message3.save();
     await message4.save();
+
+    await habit1.save();
+    await habit2.save();
+    await habit3.save();
+    await habit4.save();
 
     await user0.save();
     await user1.save();
