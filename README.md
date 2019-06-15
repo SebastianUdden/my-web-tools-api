@@ -18,3 +18,10 @@
     -   MONGODB_URI=
     -   ERASE_DB_ON_SYNC=
     -   SEED_DB_WITH_USERS_AND_MESSAGES=
+
+## Deployment
+
+-   Authenticate: heroku login
+-   Create heroku: heroku create
+-   Check the creation: git remote -v
+-   Push code: git push heroku master

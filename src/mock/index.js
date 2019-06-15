@@ -1,4 +1,5 @@
 import models from '../models';
+import { uuidv4 } from '../utils/uuid';
 
 export const createUsersWithMessages = async () => {
     const user0 = new models.User({
@@ -68,9 +69,21 @@ export const createUsersWithMessages = async () => {
         startDate: new Date(),
         endDate: new Date(),
         occasions: [
-            new Date('2019-06-05T10:30:05.000Z'),
-            new Date('2019-06-06T10:30:05.000Z'),
-            new Date('2019-06-07T10:30:05.000Z'),
+            {
+                _id: uuidv4(),
+                time: new Date('2019-06-05T10:30:05.000Z'),
+                note: 'Notified',
+            },
+            {
+                _id: uuidv4(),
+                time: new Date('2019-06-06T10:30:05.000Z'),
+                note: 'Notified',
+            },
+            {
+                _id: uuidv4(),
+                time: new Date('2019-06-07T10:30:05.000Z'),
+                note: 'Notified',
+            },
         ],
         rank: 1,
         createdAt: new Date(),
@@ -83,9 +96,21 @@ export const createUsersWithMessages = async () => {
         startDate: new Date(),
         endDate: new Date(),
         occasions: [
-            new Date('2019-06-10T10:30:05.000Z'),
-            new Date('2019-06-12T10:30:05.000Z'),
-            new Date('2019-06-12T14:30:05.000Z'),
+            {
+                _id: uuidv4(),
+                time: new Date('2019-06-10T10:30:05.000Z'),
+                note: 'Notified',
+            },
+            {
+                _id: uuidv4(),
+                time: new Date('2019-06-12T10:30:05.000Z'),
+                note: 'Notified',
+            },
+            {
+                _id: uuidv4(),
+                time: new Date('2019-06-12T14:30:05.000Z'),
+                note: 'Notified',
+            },
         ],
         rank: 2,
         createdAt: new Date(),
@@ -99,9 +124,21 @@ export const createUsersWithMessages = async () => {
         startDate: new Date(),
         endDate: new Date(),
         occasions: [
-            new Date('2019-06-01T10:30:05.000Z'),
-            new Date('2019-06-02T10:30:05.000Z'),
-            new Date('2019-06-03T10:30:05.000Z'),
+            {
+                _id: uuidv4(),
+                time: new Date('2019-06-01T10:30:05.000Z'),
+                note: 'Notified',
+            },
+            {
+                _id: uuidv4(),
+                time: new Date('2019-06-02T10:30:05.000Z'),
+                note: 'Notified',
+            },
+            {
+                _id: uuidv4(),
+                time: new Date('2019-06-03T10:30:05.000Z'),
+                note: 'Notified',
+            },
         ],
         rank: 3,
         createdAt: new Date(),
@@ -115,9 +152,21 @@ export const createUsersWithMessages = async () => {
         startDate: new Date(),
         endDate: new Date(),
         occasions: [
-            new Date('2019-06-06T11:30:05.000Z'),
-            new Date('2019-06-10T10:40:05.000Z'),
-            new Date('2019-06-13T14:20:05.000Z'),
+            {
+                _id: uuidv4(),
+                time: new Date('2019-06-06T11:30:05.000Z'),
+                note: 'Notified',
+            },
+            {
+                _id: uuidv4(),
+                time: new Date('2019-06-10T10:40:05.000Z'),
+                note: 'Notified',
+            },
+            {
+                _id: uuidv4(),
+                time: new Date('2019-06-13T14:20:05.000Z'),
+                note: 'Notified',
+            },
         ],
         rank: 4,
         createdAt: new Date(),
