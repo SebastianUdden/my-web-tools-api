@@ -3,7 +3,7 @@ import bodyParser from 'body-parser';
 import express from 'express';
 import cors from 'cors';
 import routes from './routes';
-import { createUsersWithMessages } from './mock';
+import { createMockModel } from './mock';
 import models, { connectDb } from './models';
 
 const app = express();
@@ -22,18 +22,22 @@ app.use('/session', routes.session);
 app.use('/users', routes.users);
 app.use('/messages', routes.messages);
 app.use('/habits', routes.habits);
+app.use('/memories', routes.memories);
+app.use('/links', routes.links);
 
 connectDb().then(async () => {
-    if (process.env.ERASE_DB_ON_SYNC) {
-        await Promise.all([
-            models.User.deleteMany({}),
-            models.Message.deleteMany({}),
-            models.Habit.deleteMany({}),
-        ]);
+    if (process.env.ERASE_DB_ON_SYNC_FOR) {
+        await Promise.all(
+            process.env.ERASE_DB_ON_SYNC_FOR.split(',').map(model =>
+                models[model].deleteMany({}),
+            ),
+        );
     }
 
-    if (process.env.SEED_DB_WITH_USERS_AND_MESSAGES) {
-        createUsersWithMessages();
+    if (process.env.SEED_DB_WITH) {
+        process.env.SEED_DB_WITH.split(',').map(model =>
+            createMockModel(model),
+        );
     }
     app.listen(process.env.PORT || 3000, () =>
         console.log(`Example app listening on port ${process.env.PORT}...`),
